@@ -1,0 +1,27 @@
+#! /bin/bash
+python train.py \
+        --data_path /mnt/petrelfs/zhaobin/gyp/data/ddff-dataset-trainval.h5 \
+        --dataset DDFF \
+        -N new \
+        --use_cuda \
+        --device 0 \
+        -E 800 \
+        --BS 32 \
+        --save_checkpoint \
+        --save_best \
+        --save_last \
+        --recon_all \
+        --dpt_post_op 'clip' \
+        --fnumber 2 \
+        --continue_from best-model.pth \
+        --normalize_dpt \
+        --sm_loss_beta 2.5 \
+        --camera_far 8. \
+        --verbose \
+        --aif_recon_loss_lambda 100 \
+        --aif_blur_loss_lambda 1e1 \
+        --blur_loss_lambda 1e1 \
+        --sm_loss_lambda 10 \
+        --manual_seed 0 \
+        --log \
+        --vis 

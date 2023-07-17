@@ -1,0 +1,17 @@
+python train_dpt.py \
+        --data_path /mnt/cfs/sihaozhe/data/NYUv2 \
+        --dataset NYUv2 \
+        -N NYUv2_bt2.5_orig \
+        --gt_aif \
+        --use_cuda \
+        --device 6 \
+        -E 2000 \
+        --BS 32 \
+        --save_last \
+        --save_checkpoint \
+        --sm_loss_beta 2.5 \
+        --camera_far 10 \
+        --dpt_post_op norm \
+        --verbose \
+        --log \
+        --vis
